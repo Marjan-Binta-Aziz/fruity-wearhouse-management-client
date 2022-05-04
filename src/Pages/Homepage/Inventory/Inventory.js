@@ -1,9 +1,15 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
     import './Inventory.css'
     const Inventory = ({item}) => {
-    console.log(item);
-        const {name, price, img, description,supplierName, quantity} = item;
+        const {_id, name, price, img, description,supplierName, quantity} = item;
+        const navigate = useNavigate();
+        const navigateToUpdateDetails = id => {
+            navigate(`/inventory/${id}`)
+            console.log(id);
+        }
+       
 
         return (
             <div className='inventory'>
@@ -15,7 +21,7 @@ import React from 'react';
             <p><small>{description}</small></p>
             <p>Quantity: {quantity}</p>
             </div>
-            <button className='btn'>Update</button>
+            <button onClick={()=> navigateToUpdateDetails(_id)} className='btn'>Update</button>
             </div>
         );
     };

@@ -18,7 +18,7 @@ const Inventories = () => {
         {
         items.map((item) => (
           <Inventory 
-          key={item.id} 
+          key={item._id} 
           item={item}>
           </Inventory>
         ))}
