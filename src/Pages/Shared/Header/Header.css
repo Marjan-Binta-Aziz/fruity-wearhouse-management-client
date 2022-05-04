@@ -1,0 +1,12 @@
+.navbar {
+    background-color: rgba(225, 165, 52, 0.222);
+    border-radius:100px ;
+    font-size: larger;
+    font-weight: 500;
+}
+
+.header {
+    width: 100%;
+    padding: 40px 40px 40px 40px;
+}
+

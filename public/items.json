@@ -1,0 +1,110 @@
+[
+    {
+        "id": 1,
+        "name": "Pineapple",
+        "price": "300",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "img": "https://i.ibb.co/8spb2WM/pineapple.png",
+        "supplierName" : "Khusi.com",
+        "quantity" : 0
+    },
+    {
+        "id": 2,
+        "name": "Mango",
+        "price": "100",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "img": "https://i.ibb.co/3W460Jv/mango.png",
+        "supplierName" : "Khusi.com",
+        "quantity" : 0
+    },
+    {
+        "id": 3,
+        "name": "Banana",
+        "price": "150",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "img": "https://i.ibb.co/VDg7nvS/bannna.png",
+        "supplierName" : "Khusi.com",
+        "quantity" : 0
+    },
+    {
+        "id": 4,
+        "name": "Avocados",
+        "price": "800",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "img": "https://i.ibb.co/JnKnpF4/avocados.png",
+        "supplierName" : "Khusi.com",
+        "quantity" : 0
+    },
+    {
+        "id": 5,
+        "name": "Watermelon",
+        "price": "100",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "img": "https://i.ibb.co/jDxcTwf/watermelon.png",
+        "supplierName" : "Khusi.com",
+        "quantity" : 0
+    },
+    {
+        "id": 6,
+        "name": "Orange",
+        "price": "600",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa",
+        "img": "https://i.ibb.co/2hHcVJb/orange.png",
+        "supplierName" : "Khusi.com",
+        "quantity" : 0
+    },
+    {
+        "id": 7,
+        "name": "Grape",
+        "price": "100",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa",
+        "img": "https://i.ibb.co/r000jLB/grap.png",
+        "supplierName" : "Khusi.com",
+        "quantity" : 0
+    },
+    {
+        "id": 8,
+        "name": "Apple",
+        "price": "300",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa",
+        "img": "https://i.ibb.co/ysnMp8W/apple.png",
+        "supplierName" : "Khusi.com",
+        "quantity" : 0
+    },
+    {
+        "id": 9,
+        "name": "Jackfruit",
+        "price": "30",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa",
+        "img": "https://i.ibb.co/FHmtTJW/jackfruit.png",
+        "supplierName" : "Khusi.com",
+        "quantity" : 0
+    },
+    {
+        "id": 10,
+        "name": "Raspberry",
+        "price": "800",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa",
+        "img": "https://i.ibb.co/3k90nZD/resbarry.png",
+        "supplierName" : "Khusi.com",
+        "quantity" : 0
+    },
+    {
+        "id": 11,
+        "name": "Blueberry",
+        "price": "300",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa",
+        "img": "https://i.ibb.co/k0BB0mj/blueberry.png",
+        "supplierName" : "Khusi.com",
+        "quantity" : 0
+    },
+    {
+        "id": 12,
+        "name": "Kiwi",
+        "price": "600",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa",
+        "img": "https://i.ibb.co/fFtyxXS/kiwi.png",
+        "supplierName" : "Khusi.com",
+        "quantity" : 0
+    }
+]

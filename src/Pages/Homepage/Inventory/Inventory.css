@@ -1,0 +1,24 @@
+.inventory{
+    border: 1px solid lavender;
+    border-radius: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    box-shadow: 5px 5px 15px 15px rgba(0, 0, 0, 0.107);
+}
+.inventory img{
+    height: 300px;
+    width: 300px;
+}
+.btn{
+    width: 200px;
+    padding: 10px;
+    border: 2px solid rgb(182, 176, 176);
+    border-radius: 90px;
+    margin-bottom: 10px;
+}
+.btn:hover{
+    border: 2px solid rgb(239, 192, 99);
+    border-radius: 90px;
+    font-weight: 300;
+
+}

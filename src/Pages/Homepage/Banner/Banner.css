@@ -1,0 +1,37 @@
+.banner_main{
+    background: url(https://i.ibb.co/k50x4v7/banner-2.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-color: rgba(239, 238, 233, 0.775);
+    height: 500px;
+
+
+}
+
+.container h1 {
+    color: #f29854;
+    font-size: 84px;
+    line-height: 90px;
+    padding-bottom: 25px;
+    font-weight: bold;
+}
+.container a:hover {
+    color: #fff;
+    font-size: larger;
+}
+
+.banner_main button{
+    font-size: 16px;
+    border: 0;
+    padding: 10px 0px;
+    width: 100%;
+    max-width: 190px;
+    text-align: center;
+    display: inline-block;
+    font-weight: 500;
+    margin-top: 10px;
+}
+.banner_main button:hover{
+    border: 2px solid #f29854;
+     border-radius: 80px;
+}
