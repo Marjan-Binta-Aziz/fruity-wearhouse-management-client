@@ -1,6 +1,5 @@
 import React from 'react';
 import './Header.css'
-import logo from '../../../images/logo1.png'
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -39,7 +38,15 @@ const Header = () => {
 
             </Nav>
               <Nav className="ms-auto">
-                
+              {
+                user && 
+                <>
+                <Nav.Link as={Link} to="/manage">Manage Items</Nav.Link>
+                <Nav.Link as={Link} to="/add">Add Item</Nav.Link>
+                <Nav.Link as={Link} to="/myitems">My items</Nav.Link>
+                </>
+
+              }
               {
                 user ? (
                   <Nav.Link onClick={logout}>Log Out</Nav.Link>

@@ -4,19 +4,17 @@ import {useSignInWithEmailAndPassword,useSendPasswordResetEmail,} from "react-fi
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 import SocialLogin from "../SocialLogin/SocialLogin";
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 
 const Login = () => {
-  //use for another way to get mail and pass like handleEmailBlur
+
   const emailRef = useRef("");
   const passwordRef = useRef("");
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
 
-  //for go to the registration page
   const navigate = useNavigate();
 
-  //for login to firebase
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
 
@@ -31,7 +29,7 @@ const Login = () => {
 
   if (error || errorReset) {
     errorElement = (
-      <h5 className="text-danger m-4">Error: {error?.message} </h5>
+      <h5 className="text-danger m-4">Error: {error?.message} {errorReset?.message}</h5>
     );
   }
 
@@ -51,7 +49,7 @@ const Login = () => {
     const email = emailRef.current.value;
     if (email) {
       await sendPasswordResetEmail(email);
-      toast("Sent email");
+      toast.success("Sent email");
     } else {
       toast.error("There is no email address");
     }
@@ -111,7 +109,6 @@ const Login = () => {
           Reset Password
         </button>
       </p>
-      <SocialLogin></SocialLogin>
     </div>
   );
 };

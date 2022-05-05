@@ -14,7 +14,7 @@ import { useNavigate } from 'react-router-dom';
 
         return (
             <div className='inventory'>
-               <img className='w-100 mb-4 p-4 rounded-3 ' src={img} alt="" />
+            <img className='w-100 mb-4 p-4 rounded-3 ' src={img} alt="" />
                 <h2>{name}</h2>
             <h4>Price: $ {price}</h4>
             <div className='text-start ms-2 ps-3 '>

@@ -3,10 +3,14 @@ import Header from './Pages/Shared/Header/Header';
 import Footer from './Pages/Shared/Footer/Footer';
 import { Route, Routes } from 'react-router-dom';
 import Home from './Pages/Homepage/Home/Home'; 
-import UpdateInventory from './Pages/UpdateInventory/UpdateInventory';
+import Delivered from './Pages/Delivered/Delivered';
 import Login from './Pages/User/Login/Login';
 import Signup from './Pages/User/Signup/Signup';
 import { Toaster } from 'react-hot-toast';
+import ManageInventory from './Pages/ManageInventory/ManageInventory';
+import RequireAuth from './Pages/RequireAuth/RequireAuth';
+import AddItem from './Pages/AddItem/AddItem';
+import NotFound from './Pages/Shared/NotFound/NotFound';
 
 function App() {
   return (
@@ -14,9 +18,29 @@ function App() {
       <Header></Header>
       <Routes>
         <Route path='/'element={<Home></Home>}></Route>
-        <Route path='/inventory/:inventoryId'element={<UpdateInventory></UpdateInventory>}></Route>
+        <Route path='/inventory/:inventoryId'element=
+        {
+          <RequireAuth>
+        <Delivered></Delivered>
+          </RequireAuth>
+        }>
+        </Route>
         <Route path='/login' element={<Login></Login>}></Route>
-        <Route path='/signup' element={<Signup></Signup>}></Route>
+        <Route path='/signup' element={<Signup></Signup>}></Route>        
+        <Route path='/add' element=
+        {
+        <RequireAuth>
+          <AddItem></AddItem>
+        </RequireAuth>
+        }></Route>
+        <Route path='/manage' element=
+        {
+        <RequireAuth>
+          <ManageInventory></ManageInventory>
+        </RequireAuth>
+        }>
+          </Route>
+          <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
       <Toaster position="top-right"
