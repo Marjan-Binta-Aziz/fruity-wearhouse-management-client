@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 
-const useUpdateInventory = (id) => {
-    const [item, setItem] = useState();
+const useUpdateInventory = (inventoryId) => {
+    const [item, setItem] = useState({});
     useEffect( () => {
-        fetch(`http://localhost:5000/inventory/${id}`)
+        fetch(`http://localhost:5000/inventory/${inventoryId}`)
         .then(res => res.json())
         .then(data => setItem(data))
-    },[id])
+    },[inventoryId])
     return [item];
 };
 

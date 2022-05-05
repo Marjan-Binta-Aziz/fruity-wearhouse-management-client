@@ -3,13 +3,13 @@ import { useParams } from 'react-router-dom';
 import useUpdateInventory from '../../hooks/useUpdateInventory';
 
 const UpdateInventory = () => {
-    const {id} = useParams();
+    const {inventoryId} = useParams();
 
-    const [item] = useUpdateInventory(id);
+    const [item] = useUpdateInventory(inventoryId);
     return (
         <div>
-            <h2>Update Inventories: {id}</h2>
-            <h3>{item.name}</h3>
+            <h2>Update Inventories:{item.name} {inventoryId}</h2>
+            <h3>Name :{item.name}</h3>
         </div>
     );
 };
