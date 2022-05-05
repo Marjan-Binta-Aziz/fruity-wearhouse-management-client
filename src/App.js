@@ -6,7 +6,7 @@ import Home from './Pages/Homepage/Home/Home';
 import UpdateInventory from './Pages/UpdateInventory/UpdateInventory';
 import Login from './Pages/User/Login/Login';
 import Signup from './Pages/User/Signup/Signup';
-import { ToastContainer } from 'react-bootstrap';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
@@ -19,7 +19,8 @@ function App() {
         <Route path='/signup' element={<Signup></Signup>}></Route>
       </Routes>
       <Footer></Footer>
-      <ToastContainer/>
+      <Toaster position="top-right"
+    reverseOrder={false}/>
     </div>
   );
 }

@@ -53,7 +53,7 @@ const Login = () => {
       await sendPasswordResetEmail(email);
       toast("Sent email");
     } else {
-      toast("There is no email address");
+      toast.error("There is no email address");
     }
   };
 
@@ -112,7 +112,6 @@ const Login = () => {
         </button>
       </p>
       <SocialLogin></SocialLogin>
-      <Toaster />
     </div>
   );
 };
