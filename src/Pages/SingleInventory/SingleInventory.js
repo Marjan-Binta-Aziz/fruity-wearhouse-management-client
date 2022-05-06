@@ -1,5 +1,4 @@
-import { Button } from 'bootstrap';
-import { Card, Form, Stack } from 'react-bootstrap';
+import { Button, Card, Form, Stack } from 'react-bootstrap';
 import toast from 'react-hot-toast';
 import { useParams } from 'react-router-dom';
 import useUpdateInventory from '../../hooks/useUpdateInventory';

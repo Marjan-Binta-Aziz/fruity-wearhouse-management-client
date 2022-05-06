@@ -13,6 +13,7 @@ import AddItem from './Pages/AddItem/AddItem';
 import NotFound from './Pages/Shared/NotFound/NotFound';
 import MyItems from './Pages/MyItems/MyItems';
 import Inventory from './Pages/Homepage/Inventory/Inventory';
+import SingleInventory from './Pages/SingleInventory/SingleInventory';
 
 function App() {
   return (
@@ -23,7 +24,8 @@ function App() {
         <Route path='/inventory/:inventoryId'element=
         {
           <RequireAuth>
-        <Delivered></Delivered>
+            <SingleInventory></SingleInventory>
+        {/* <Delivered></Delivered> */}
           </RequireAuth>
         }>
         </Route>

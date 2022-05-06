@@ -25,7 +25,7 @@ const Inventories = () => {
         ))}
       </div>
       <div className='m-3 p-3 btn'>
-      <Link to='/inventory' className="text-black text-decoration-none ">Manage Inventories</Link>
+      <Link to='/singleInventory' className="text-black text-decoration-none ">Manage Inventories</Link>
       </div>
     </div>
     );
