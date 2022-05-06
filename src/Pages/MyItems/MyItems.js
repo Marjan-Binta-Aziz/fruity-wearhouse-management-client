@@ -56,18 +56,17 @@ const MyItems = () => {
                 <tbody>
                     {
                         items.map((item, index) =>
-
                             <tr key={item._id}>
                                 <td>{index + 1}</td>
                                 <td className='text-start'>{item.name}</td>
                                 <td>$ {item.price}</td>
                                 <td>{item.quantity} pieces </td>
-                                <td><Button className='btn-light' onClick={() => deleteFromMyItems(item._id)}>Delete</Button></td>
+                                <td><button className='btn-outline-danger' onClick={() => deleteFromMyItems(item._id)}>Delete</button></td>
                             </tr>
                         )
                     }
+                    </tbody>
 
-                </tbody>
             </Table>
         </div>
 

@@ -33,19 +33,20 @@ const ManageInventory = () => {
                     <th>Action</th>
                     </tr>
                     </thead>
+                    <tbody >
                 {
                 items.map((item, index) =>
-                    <tbody key={item._id}>
-                    <tr>
+                    <tr key={item._id}>
                     <td>{index + 1}</td>
                     <td>{item.name}</td>
                     <td>{item.price} </td>
                     <td>{item.supplierName}</td>
                     <td>{item.quantity}</td>
-                    <td><button  onClick={() => deleteItem(item._id)}>Delete</button></td>
+                    <td><button className='btn-outline-danger' onClick={() => deleteItem(item._id)}>Delete</button></td>
                     </tr>
-                    </tbody>)
+                    )
             } 
+            </tbody>
         </Table>
         </div>
     );
