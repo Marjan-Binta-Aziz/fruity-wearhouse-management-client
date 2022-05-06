@@ -6,6 +6,25 @@ const Delivered = () => {
     const {inventoryId} = useParams();
 
     const [item] = useUpdateInventory(inventoryId);
+
+    /* const handleDelivered = () => {
+        const newQuantity = parseInt(item.quantity-1);
+        const update = { newQuantity , item};
+        const url = `http://localhost:5000/inventory/${item._id}`
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type' : 'application/json'
+            },
+            body: JSON.stringify(update)
+        })
+        .then(res => res.json())
+        .then(data => {
+            alert('updated')
+            console.log(data?.newQuantity);
+        }) 
+    
+    }*/
     return (
         <div>
             <h2>Update Inventories: {inventoryId}</h2>
@@ -19,7 +38,7 @@ const Delivered = () => {
             <p><small>{item.description}</small></p>
 
             </div>
-            <button className='btn'>Delivered</button>
+            <button  className='btn'>Delivered</button>
             <br />
             <Link className="text-danger text-decoration-none" to="/restockitems">Restock Items?</Link>
 

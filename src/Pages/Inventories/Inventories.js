@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import useItems from '../../hooks/useItems';
 import Inventory from '../Homepage/Inventory/Inventory';
 import './Inventories.css'
@@ -16,12 +17,15 @@ const Inventories = () => {
       <h1 className="items-title py-4">Our items{items.name}</h1>
       <div className="items-container">
         {
-        items.map((item) => (
+        items.slice(0, 6).map((item) => (
           <Inventory 
           key={item._id} 
           item={item}>
           </Inventory>
         ))}
+      </div>
+      <div className='m-3 p-3 btn'>
+      <Link to='/inventory' className="text-black text-decoration-none ">Manage Inventories</Link>
       </div>
     </div>
     );

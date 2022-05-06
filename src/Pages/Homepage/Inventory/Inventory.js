@@ -1,12 +1,12 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
     import './Inventory.css'
     const Inventory = ({item}) => {
-        const {_id, name, price, img, description,supplierName, quantity} = item;
+        const { name, price, img, description,supplierName, quantity} = item;
         const navigate = useNavigate();
-        const navigateToUpdateDetails = id => {
+
+        const navigateToSingleInventory = id => {
             navigate(`/inventory/${id}`)
             console.log(id);
         }
@@ -22,7 +22,7 @@ import { useNavigate } from 'react-router-dom';
             <p><small>{description}</small></p>
             <p>Quantity: {quantity}</p>
             </div>
-            <button onClick={()=> navigateToUpdateDetails(_id)} className='btn'>Update</button>
+            <button onClick={()=> navigateToSingleInventory(item._id)} className='btn'>Update</button>
 
                     
             </div>

@@ -5,8 +5,8 @@ import useItems from '../../hooks/useItems';
 const ManageInventory = () => {
     const [items, setItems] = useItems();
     const deleteItem = (id) => {
-        const proceed = window.confirm("Are you sure want to delete?");
-        if (proceed) {
+        const confirmDelete = window.confirm("Are you sure want to delete this item?");
+        if (confirmDelete) {
           const url = `http://localhost:5000/inventory/${id}`;
           fetch(url, {
             method: "DELETE",
@@ -25,6 +25,7 @@ const ManageInventory = () => {
            <Table striped bordered hover className='container'>
                 <thead>
                     <tr>
+                    <th>No</th>
                     <th>Items Name</th>
                     <th>Price</th>
                     <th>Supplier Name</th>
@@ -33,9 +34,10 @@ const ManageInventory = () => {
                     </tr>
                     </thead>
                 {
-                items.map(item =>
+                items.map((item, index) =>
                     <tbody key={item._id}>
                     <tr>
+                    <td>{index + 1}</td>
                     <td>{item.name}</td>
                     <td>{item.price} </td>
                     <td>{item.supplierName}</td>

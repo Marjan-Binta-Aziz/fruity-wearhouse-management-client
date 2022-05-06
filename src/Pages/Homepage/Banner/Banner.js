@@ -4,7 +4,7 @@ const Banner = () => {
     return (
         <div>
             {/*<!-- banner --> */}
-            <section className="banner_main">
+            <section className="banner_main pb-2">
                <div className="container">
                   <div className="row d_flex">
                      <div className="col-md-6 mt-4">
@@ -15,9 +15,9 @@ const Banner = () => {
                         </div>
                            <button className=''>Read More</button>
                      </div>
-                     <div className="col-md-6">
+                     <div className="col-md-6 ">
                         <div className="text-img ms-auto">
-                           <img src= 'https://i.ibb.co/Lzv5z36/web.png' />
+                           <img className='w-100' src= 'https://i.ibb.co/Lzv5z36/web.png' />
                         </div>
                      </div>
                   </div>

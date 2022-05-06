@@ -3,9 +3,8 @@
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-color: rgba(239, 238, 233, 0.775);
-    height: 500px;
-
-
+    height: auto;
+    
 }
 
 .container h1 {
