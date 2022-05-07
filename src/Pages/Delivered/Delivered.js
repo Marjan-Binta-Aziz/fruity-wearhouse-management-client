@@ -48,7 +48,7 @@ const Delivered = () => {
   };
   return (
     <div>
-      <h2>Update Inventories</h2>
+      <h2>Update & Restock Items</h2>
       <div className="w-50 container">
         <img className="w-50 mb-0 p-0 rounded-3 " src={item.img} alt="" />
         <h2>Stock: {item.quantity}</h2>
