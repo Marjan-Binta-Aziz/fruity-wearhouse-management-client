@@ -3,7 +3,6 @@ import { Button, Form, Spinner } from "react-bootstrap";
 import {useSignInWithEmailAndPassword,useSendPasswordResetEmail,} from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
-import SocialLogin from "../SocialLogin/SocialLogin";
 import toast from 'react-hot-toast';
 import axios from "axios";
 
@@ -40,9 +39,9 @@ const Login = () => {
     const password = passwordRef.current.value;
     await signInWithEmailAndPassword(email, password);
     const {data} = await axios.post('http://localhost:5000/login', {email});
-    console.log(data);
-    localStorage.setItem("accessToken", data.accessToken);
-    navigate(from, { replace: true });
+    console.log(data.accessToken);
+    // localStorage.setItem("accessToken", data.accessToken);
+    // navigate(from, { replace: true });
   };
 
   const naviToSignup = () => {
@@ -61,8 +60,8 @@ const Login = () => {
 
 
   if (user) {
-    console.log(user);
-  // navigate(from, { replace: true });
+
+  navigate(from, { replace: true });
   }
 
   return (

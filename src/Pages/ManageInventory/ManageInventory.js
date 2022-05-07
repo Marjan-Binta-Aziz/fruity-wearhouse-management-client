@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Table } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import useItems from '../../hooks/useItems';
+import ManageInventories from './ManageInventories/ManageInventories';
 
 const ManageInventory = () => {
     const [items, setItems] = useItems();
@@ -30,7 +31,18 @@ const ManageInventory = () => {
           <div>
                 <h1 className='mt-3 text-uppercase text-dark'>Manage Inventoies</h1>
           <Button onClick={addNewItem} className='btn-light ms-auto'>Add New Item</Button>
-           <Table striped bordered hover className='container'>
+          <div className='container items-container'>
+          {
+              items.map(item => <ManageInventories
+              key={item._id}
+              item = {item}
+              deleteItem = {deleteItem}
+              ></ManageInventories>)
+
+          }
+          </div>
+          
+{/*            <Table striped bordered hover className='container'>
 
                 <thead>
                     <tr>
@@ -51,12 +63,15 @@ const ManageInventory = () => {
                     <td>{item.price} </td>
                     <td>{item.supplierName}</td>
                     <td>{item.quantity}</td>
-                    <td><button className='btn-outline-danger' onClick={() => deleteItem(item._id)}>Delete</button></td>
+                    <td>
+                    <button onClick={()=> navigateToDelevired(item._id)} className='btn'>Update</button>
+                    <button className='btn-outline-danger' onClick={() => deleteItem(item._id)}>Delete</button>
+                    </td>
                     </tr>
                     )
             } 
             </tbody>
-        </Table>
+        </Table> */}
         </div>
     );
 };

@@ -2,11 +2,11 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
     import './Inventory.css'
-    const Inventory = ({item}) => {
+    const Inventory = ({item, updateThisItem}) => {
         const { name, price, img, description,supplierName, quantity} = item;
         const navigate = useNavigate();
 
-        const navigateToSingleInventory = id => {
+        const navigateToDelevired = id => {
             navigate(`/inventory/${id}`)
             console.log(id);
         }
@@ -20,10 +20,9 @@ import { useNavigate } from 'react-router-dom';
             <div className='text-start mx-4 ps-3 '>
             <h5>Supplier Name: {supplierName}</h5>
             <p><small>{description}</small></p>
-            <p>Quantity: {quantity}</p>
+            <p>Stock: {quantity}</p>
             </div>
-            <button onClick={()=> navigateToSingleInventory(item._id)} className='btn'>Update</button>
-
+            <button onClick={()=> navigateToDelevired(item._id)} className='btn'>Update</button>
                     
             </div>
         );

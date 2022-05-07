@@ -7,7 +7,7 @@ const useUpdateInventory = (inventoryId) => {
         .then(res => res.json())
         .then(data => setItem(data))
     },[inventoryId])
-    return [item];
+    return [item,setItem];
 };
 
 export default useUpdateInventory;

@@ -11,27 +11,33 @@ const MyItems = () => {
     const [user] = useAuthState(auth);
     const [items, setItems] = useState([]);
 
+    const email = user.email;
     useEffect(()=>{        
+        const url = `http://localhost:5000/myitems?email=${email}`;
         const getMyItems = async () => { 
-            const email = user.email;
-            const url = `http://localhost:5000/myitems?email=${email}`;
-            try{
+
+        await axios.get(url)
+            .then(response => {
+                setItems(response.data);
+            })
+           /*  try{
             
                 const {data} = await axios.get(url ,{
                     headers: {
                         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
                     },
                 })
-                setItems(data);
-                    // .then(response => {
-                    // })
+                
+                    .then(response => {
+                        setItems(data);
+                    })
                 } catch (error){
                     console.log(error.message);
                 if (error.response.status === 401 || error.response.status === 403) {
                 signOut(auth);
                 navigate("/login");
                 }
-            }
+            } */
         }
             getMyItems();
     },[user])

@@ -51,22 +51,22 @@ const AddItem = () => {
             <div className='w-25 mx-auto mt-4'>
                 <Form onSubmit={handleItems}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Control type="name" name='name' placeholder="Item Name" />
+                        <Form.Control type="name" name='name' placeholder="Item Name" required/>
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Control type="number" name='price' placeholder="Item Price" />
+                        <Form.Control type="number" name='price' placeholder="Item Price" required/>
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Control type="text" name='img' placeholder="Image URl" />
+                        <Form.Control type="text" name='img' placeholder="Image URl" required/>
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Control as="textarea" name='description' row='4' placeholder="A short description of Item" />
+                        <Form.Control as="textarea" name='description' row='4' placeholder="A short description of Item" required/>
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Control type="number" name='quantity' placeholder="Quantity" />
+                        <Form.Control type="number" name='quantity' placeholder="Quantity" required/>
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Control type="text" name='supplierName' placeholder="Supplier Name" />
+                        <Form.Control type="text" name='supplierName' placeholder="Supplier Name" required/>
                     </Form.Group>
                     <Button variant="light" type="submit">
                         Add This Item
