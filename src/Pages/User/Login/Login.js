@@ -40,8 +40,8 @@ const Login = () => {
     await signInWithEmailAndPassword(email, password);
     const {data} = await axios.post('http://localhost:5000/login', {email});
     console.log(data.accessToken);
-    // localStorage.setItem("accessToken", data.accessToken);
-    // navigate(from, { replace: true });
+    localStorage.setItem("accessToken", data.accessToken);
+    navigate(from, { replace: true });
   };
 
   const naviToSignup = () => {
@@ -59,10 +59,6 @@ const Login = () => {
   };
 
 
-  if (user) {
-
-  navigate(from, { replace: true });
-  }
 
   return (
     <div className="container w-50 text-center mx-auto pt-4 m-auto">
@@ -86,8 +82,7 @@ const Login = () => {
           />
         </Form.Group>
         <Button
-          className="m-auto w-50 rounded-pill d-block"
-          variant="outline-dark"
+          className="m-auto w-50 rounded-pill d-block btn-light"
           type="submit"
         >
           Submit

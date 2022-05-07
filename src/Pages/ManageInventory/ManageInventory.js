@@ -56,9 +56,9 @@ const ManageInventory = () => {
                   <tr key={item._id}>
                     <td>{index + 1}</td>
                     <td>{item.name}</td>
-                    <td>{item.price} </td>
+                    <td>{item.price} $</td>
                     <td>{item.supplierName}</td>
-                    <td>{item.quantity}</td>
+                    <td>{item.quantity} <small>(gm/kg/piece)</small></td>
                     <td>
                     <button onClick={()=> navigateToDelevired(item._id)} className='px-2 btn-outline-warning'>Update</button> {''}
                     <button className='px-2 btn-outline-danger' onClick={() => deleteItem(item._id)}>Delete</button>

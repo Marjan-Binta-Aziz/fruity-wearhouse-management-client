@@ -82,8 +82,8 @@ const MyItems = () => {
                             <tr key={item._id}>
                                 <td>{index + 1}</td>
                                 <td className='text-start'>{item.name}</td>
-                                <td>$ {item.price}</td>
-                                <td>{item.quantity} pieces </td>
+                                <td>{item.price} $</td>
+                                <td>{item.quantity} <small>(piece/gm/kg)</small> </td>
                                 <td><button className='btn-outline-danger' onClick={() => deleteFromMyItems(item._id)}>Delete</button></td>
                             </tr>
                         )

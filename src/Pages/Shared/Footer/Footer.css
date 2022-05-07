@@ -1,0 +1,46 @@
+.footer {
+    padding-top: 100px;
+}
+
+.logo_footer {
+    display: block;
+}
+.logo_footer img{
+    height: 200px;
+}
+
+ul.opening li {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 24px;
+    font-size: 17px;
+    padding-bottom: 2px;
+
+}
+
+ul.opening li a{
+    text-decoration: none;
+    color: #000000;
+}
+.copyright {
+    margin-top: 40px;
+    padding: 30px 0;
+    background: #000000;
+}
+
+.copyright p {
+    color: #989898;
+    font-size: 17px;
+    line-height: 22px;
+    text-align: center;
+    font-weight: 400;
+    font-weight: normal;
+}
+
+.copyright a {
+    color: #989898;
+}
+
+.copyright a:hover {
+    color: #ff0000;
+}
