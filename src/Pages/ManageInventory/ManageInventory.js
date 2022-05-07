@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Table } from 'react-bootstrap';
+import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import useItems from '../../hooks/useItems';
 import ManageInventories from './ManageInventories/ManageInventories';
@@ -13,7 +14,6 @@ const ManageInventory = () => {
   }
         const navigateToDelevired = id => {
             navigate(`/inventory/${id}`)
-            console.log(id);
         }
     const deleteItem = (id) => {
         const confirmDelete = window.confirm("Are you sure want to delete this item?");
@@ -28,13 +28,17 @@ const ManageInventory = () => {
 
               const remainingItem = items.filter((item) => item._id !== id);
               setItems(remainingItem);
+              toast.success('Delete Item Successfully')
             });
+          }
+          else{
+            toast.error('Item Not Deleted')
           }
         };
         return (
           <div>
                 <h1 className='mt-3 text-uppercase text-dark'>Manage Inventoies</h1>
-          <Button onClick={addNewItem} className='btn-light ms-auto'>Add New Item</Button>
+          <Button onClick={addNewItem} className='btn-success ms-auto'>Add New Item</Button>
          {/*  <div className='container items-container'>
           {
               items.map(item => <ManageInventories
