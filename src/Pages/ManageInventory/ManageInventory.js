@@ -3,7 +3,6 @@ import { Button, Table } from 'react-bootstrap';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import useItems from '../../hooks/useItems';
-import ManageInventories from './ManageInventories/ManageInventories';
 
 const ManageInventory = () => {
     const [items, setItems] = useItems();
@@ -39,17 +38,6 @@ const ManageInventory = () => {
           <div>
                 <h1 className='mt-3 text-uppercase text-dark'>Manage Inventoies</h1>
           <Button onClick={addNewItem} className='btn-success ms-auto'>Add New Item</Button>
-         {/*  <div className='container items-container'>
-          {
-              items.map(item => <ManageInventories
-              key={item._id}
-              item = {item}
-              deleteItem = {deleteItem}
-              ></ManageInventories>)
-
-          }
-          </div> */}
-          
             <Table striped bordered hover className='container'>
 
                 <thead>
