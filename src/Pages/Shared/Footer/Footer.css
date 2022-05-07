@@ -1,7 +1,10 @@
 .footer {
     padding-top: 100px;
+    background-color: aliceblue;
 }
-
+.footer h3{
+    color: #f29854;
+}
 .logo_footer {
     display: block;
 }
@@ -25,7 +28,7 @@ ul.opening li a{
 .copyright {
     margin-top: 40px;
     padding: 30px 0;
-    background: #000000;
+    background-color: rgba(225, 165, 52, 0.222);
 }
 
 .copyright p {
@@ -38,7 +41,7 @@ ul.opening li a{
 }
 
 .copyright a {
-    color: #989898;
+    color: #f29854;
 }
 
 .copyright a:hover {

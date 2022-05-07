@@ -28,7 +28,7 @@ const Footer = () => {
                     </div>
                     <div className="col-lg-3 col-md-6">
                         <div className="">
-                            <h3>Opening time </h3>
+                            <h3>Opening time</h3>
                             <ul className="opening">
                             <li>Monday <span>8am – 10pm</span></li>
                             <li>Tuesday <span>8am – 10pm</span></li>
