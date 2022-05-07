@@ -46,6 +46,34 @@ const Delivered = () => {
             console.error(error);
         } 
   };
+
+  const insertStock = async (event) => {
+    event.preventDefault();
+    const stockQuantity = parseInt(event.target.restock.value);
+    if (stockQuantity > 0) {
+      const url = `http://localhost:5000/restock/${inventoryId}`;
+      const restockItems = {
+      name: item.name,
+      img: item.img,
+      price: item.price,
+      quantity: parseInt(item.quantity) + parseInt(stockQuantity),
+      supplierName: item.supplierName,
+      description: item.description
+      };
+      try {
+        await axios.put(url, restockItems)
+        .then(res => {
+          if(res.data.modifiedCount === 1){
+            toast('Item Restock Successfully', {
+              icon: '👏',
+            });
+          }
+        })
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  }
   return (
     <div>
       <h2>Update & Restock Items</h2>
@@ -64,7 +92,7 @@ const Delivered = () => {
         <br />
         <h2>Restock This Items?</h2>
         <div className=' mt-4'>
-                        <Form >
+                        <Form onSubmit={insertStock}>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Control type="number" name='restock' placeholder="Restock Quantity" />
                             </Form.Group>
