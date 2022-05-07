@@ -24,8 +24,8 @@ function App() {
         <Route path='/inventory/:inventoryId'element=
         {
           <RequireAuth>
-            <SingleInventory></SingleInventory>
-        {/* <Delivered></Delivered> */}
+            {/* <SingleInventory></SingleInventory> */}
+        <Delivered></Delivered>
           </RequireAuth>
         }>
         </Route>

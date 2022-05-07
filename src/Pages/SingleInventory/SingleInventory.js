@@ -12,11 +12,11 @@ const SingleInventory = () => {
         const url = `http://localhost:5000/inventory-deliverd/${inventoryId}`;
 
         const items = {
-            name: item.productName,
-            img: item.image,
+            name: item.name,
+            img: item.img,
             price: item.price,
             quantity: updatedQuantity,
-            supplierName: item.supplier,
+            supplierName: item.supplierName,
             description: item.description
         }
         try {
@@ -49,11 +49,11 @@ const SingleInventory = () => {
             const paramsId = inventoryId.id;
             const url = `http://localhost:5000/inventory-restock/${inventoryId}`;
             const restockInventories = {
-                productName: item.productName,
-                image: item.image,
-                price: item.productPrice,
+                name: item.name,
+                img: item.img,
+                price: item.price,
                 quantity: parseInt(item.quantity) + parseInt(stockQuantity),
-                supplier: item.supplier,
+                supplierName: item.supplierName,
                 inventory: item.description
             };
 
@@ -84,21 +84,21 @@ const SingleInventory = () => {
     return (
         <div>
         <div className='container-fluid py-5 bg-dark'>
-            <h1 className='mt-5 text-uppercase text-white'>{item.productName}</h1>
+            <h1 className='mt-5 text-uppercase text-white'>{item.name}</h1>
             <Button onClick={() => deliverQuantity(item._id)} variant="outline-info" className='mb-5 mt-2'>Delivered</Button>
         </div>
         <div className='container py-5'>
             <div className='row'>
                 <div className='col-lg-5'>
-                    <img className='img-fluid' src={item.image} alt="" />
+                    <img className='img-fluid' src={item.img} alt="" />
                 </div>
                 <div className='col-lg-7 text-start mt-4'>
                     <Stack direction='horizontal' gap={3}>
-                        <Card.Subtitle as='h5'>Price: $ {item.productPrice}</Card.Subtitle>
+                        <Card.Subtitle as='h5'>Price: $ {item.price}</Card.Subtitle>
                         {'|'}
                         <Card.Subtitle as='h5'>Stock: {item.quantity} Pcs</Card.Subtitle>
                         {'|'}
-                        <Card.Subtitle as='h5'>Supplier: {item.supplier}</Card.Subtitle>
+                        <Card.Subtitle as='h5'>Supplier: {item.supplierName}</Card.Subtitle>
                     </Stack>
                     <p className='mt-5 lh-lg'>{item.description}</p>
                     <Form onSubmit={insertStock}>

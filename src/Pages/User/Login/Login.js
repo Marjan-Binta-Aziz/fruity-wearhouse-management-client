@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import toast from 'react-hot-toast';
+import axios from "axios";
 
 const Login = () => {
 
@@ -38,7 +39,10 @@ const Login = () => {
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
     await signInWithEmailAndPassword(email, password);
-    // navigate(from, { replace: true });
+    const {data} = await axios.post('http://localhost:5000/login', {email});
+    console.log(data);
+    localStorage.setItem("accessToken", data.accessToken);
+    navigate(from, { replace: true });
   };
 
   const naviToSignup = () => {
@@ -57,7 +61,8 @@ const Login = () => {
 
 
   if (user) {
-    navigate(from, { replace: true });
+    console.log(user);
+  // navigate(from, { replace: true });
   }
 
   return (

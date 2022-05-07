@@ -17,7 +17,8 @@ const Inventories = () => {
       <h1 className="items-title py-4">Our items{items.name}</h1>
       <div className="items-container">
         {
-        items.slice(0, 6).map((item) => (
+          // .slice(0, 6)
+        items.map((item) => (
           <Inventory 
           key={item._id} 
           item={item}>

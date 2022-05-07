@@ -3,21 +3,36 @@ import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import { signOut } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 const axios = require('axios');
 const MyItems = () => {
+    const navigate = useNavigate();
     const [user] = useAuthState(auth);
     const [items, setItems] = useState([]);
-    const email = user.email;
-    console.log(email);
-    useEffect(()=>{        
-        const url = `http://localhost:5000/myitems?email=${email}`
 
-        const getMyItems = async () => {
-            await axios.get(url)
-                .then(response => {
-                    setItems(response.data);
+    useEffect(()=>{        
+        const getMyItems = async () => { 
+            const email = user.email;
+            const url = `http://localhost:5000/myitems?email=${email}`;
+            try{
+            
+                const {data} = await axios.get(url ,{
+                    headers: {
+                        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+                    },
                 })
+                setItems(data);
+                    // .then(response => {
+                    // })
+                } catch (error){
+                    console.log(error.message);
+                if (error.response.status === 401 || error.response.status === 403) {
+                signOut(auth);
+                navigate("/login");
+                }
             }
+        }
             getMyItems();
     },[user])
     const deleteFromMyItems = async (id) => {

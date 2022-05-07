@@ -47,8 +47,8 @@ const AddItem = () => {
 }
     return (
       <div className='mb-5'>
-         <h1 className='my-5 text-uppercase text-dark'>Add New Item</h1>
-            <div className='w-25 mx-auto mt-5'>
+         <h1 className='my-2 text-uppercase text-dark'>Add New Item</h1>
+            <div className='w-25 mx-auto mt-4'>
                 <Form onSubmit={handleItems}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Control type="name" name='name' placeholder="Item Name" />

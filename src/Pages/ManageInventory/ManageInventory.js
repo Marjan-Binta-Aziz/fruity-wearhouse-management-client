@@ -1,9 +1,15 @@
 import React from 'react';
-import { Table } from 'react-bootstrap';
+import { Button, Table } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import useItems from '../../hooks/useItems';
 
 const ManageInventory = () => {
     const [items, setItems] = useItems();
+    const navigate = useNavigate();
+
+    const addNewItem = () => {
+      navigate('/additems')
+  }
     const deleteItem = (id) => {
         const confirmDelete = window.confirm("Are you sure want to delete this item?");
         if (confirmDelete) {
@@ -18,11 +24,14 @@ const ManageInventory = () => {
               const remainingItem = items.filter((item) => item._id !== id);
               setItems(remainingItem);
             });
-        }
-      };
-    return (
-        <div>
+          }
+        };
+        return (
+          <div>
+                <h1 className='mt-3 text-uppercase text-dark'>Manage Inventoies</h1>
+          <Button onClick={addNewItem} className='btn-light ms-auto'>Add New Item</Button>
            <Table striped bordered hover className='container'>
+
                 <thead>
                     <tr>
                     <th>No</th>
@@ -35,8 +44,8 @@ const ManageInventory = () => {
                     </thead>
                     <tbody >
                 {
-                items.map((item, index) =>
-                    <tr key={item._id}>
+                  items.map((item, index) =>
+                  <tr key={item._id}>
                     <td>{index + 1}</td>
                     <td>{item.name}</td>
                     <td>{item.price} </td>
