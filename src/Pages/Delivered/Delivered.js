@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { Button, Card, Form, Spinner, Stack } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import toast from "react-hot-toast";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import useUpdateInventory from '../../hooks/useUpdateInventory';
 const axios = require('axios').default;
 
@@ -15,7 +14,7 @@ const Delivered = () => {
     const updateQuantity = parseInt(item.quantity)- 1;
     console.log(updateQuantity);
     
-    const url = `http://localhost:5000/inventory/${inventoryId}`;
+    const url = `http://localhost:5000/delivered/${inventoryId}`;
     const items = {
       name: item.name,
       img: item.img,
@@ -31,19 +30,17 @@ const Delivered = () => {
         if (response.data.modifiedCount === 1) {
           toast.success("One Item Delivered Successfully");
         }
-        // <Spinner animation="grow" variant="dark" />
-        setItem(response.data);
+        console.log(response.data);
       });
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
-    <Spinner animation="grow" variant="dark" />
             try {
             const response = await axios.get(`http://localhost:5000/inventory/${inventoryId}`);
             
             setItem(response.data);
         } catch (error) {
-            console.error(error);
+            console.log(error);
         } 
   };
 
