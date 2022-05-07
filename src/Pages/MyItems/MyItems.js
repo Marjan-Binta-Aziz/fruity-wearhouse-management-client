@@ -5,6 +5,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { signOut } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 const axios = require('axios');
 const MyItems = () => {
     const navigate = useNavigate();
@@ -52,6 +53,7 @@ const MyItems = () => {
                     if (response.data.deletedCount === 1) {
                         const restItems = items.filter(item => item._id !== id);
                         setItems(restItems);
+                        toast.success('Delete Successfully')
                     }
                 })
 

@@ -72,6 +72,14 @@ const Delivered = () => {
       } catch (error) {
         console.log(error);
       }
+      try {
+        const res = await axios.get(`http://localhost:5000/inventory/${inventoryId}`)
+        setItem(res.data)
+      } catch (error) {
+        console.log(error);
+      }
+    }else{
+      toast.error('Invalid Number')
     }
   }
   return (
