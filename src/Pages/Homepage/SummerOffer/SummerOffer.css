@@ -1,9 +1,16 @@
+.cat{
+  color: #f29854;
+    font-size: 84px;
+    line-height: 90px;
+    padding-bottom: 25px;
+    font-weight: bold;
+}
 section {
     padding: 2rem 9%;
   }
   .banner .grid-banner {
     display: grid;
-    grid-template-columns: repeat(4,1fr); 
+    grid-template-columns: repeat(3,1fr); 
     gap: 1.5rem;
   }
   

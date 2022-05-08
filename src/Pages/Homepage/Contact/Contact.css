@@ -1,0 +1,44 @@
+.contact {
+    padding-top: 85px;
+}
+
+.main_form .contactus {
+    padding: 0px 15px;
+    margin-bottom: 25px;
+    width: 100%;
+    height: 60px;
+    background: transparent;
+    font-size: 17px;
+    font-weight: normal;
+    border: #adafb0 solid 1px;
+    color: #adafb0;
+    line-height: 20px;
+}
+
+.main_form .textarea {
+    margin-bottom: 20px;
+    width: 100%;
+    background: transparent;
+    color: #adafb0;
+    font-size: 17px;
+    font-weight: normal;
+    padding: 12px 15px 10px 15px;
+    border: #adafb0 solid 1px;
+    height: 155px;
+}
+
+
+#request *::placeholder {
+    color: #adafb0;
+    opacity: 1;
+}
+
+.map_img figure {
+    background-color: #a192871d;
+    margin: 0;
+}
+
+.map_img figure img {
+    max-width: 100%;
+}
+
