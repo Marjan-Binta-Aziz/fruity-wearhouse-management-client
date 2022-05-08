@@ -15,30 +15,31 @@ const MyItems = () => {
   useEffect(() => {
     const url = `https://floating-sands-84508.herokuapp.com/myitems?email=${email}`;
     const getMyItems = async () => {
-      await axios.get(url).then((response) => {
-        setItems(response.data);
-      });
+      //   await axios.get(url).then((response) => {
+      //     setItems(response.data);
+      //   });
 
-      // try{
-      //     const {data} = await axios.get(url ,{
-      //         headers: {
-      //             authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      //         },
-      //     })
+      try {
+        await axios
+          .get(url, {
+            headers: {
+              authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+            },
+          })
 
-      //         .then(response => {
-      //             setItems(data);
-      //         })
-      //     } catch (error){
-      //         console.log(error.message);
-      //     if (error.response.status === 401 || error.response.status === 403) {
-      //     signOut(auth);
-      //     navigate("/login");
-      //     }
-      // }
+          .then((response) => {
+            setItems(response.data);
+          });
+      } catch (error) {
+        console.log(error.message);
+        if (error.response.status === 401 || error.response.status === 403) {
+          signOut(auth);
+          navigate("/login");
+        }
+      }
     };
     getMyItems();
-  }, [user]);
+  }, [user.email]);
 
   const deleteFromMyItems = async (id) => {
     const deleteMyItem = window.confirm("Are you sure to delete this item?");
