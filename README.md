@@ -1,6 +1,8 @@
 ##
 
 Live Link : https://warehouse-management-724dd.web.app
+
+StackOverflow Link: https://stackoverflow.com/questions/72160510/why-should-we-use-heroku-to-deploy-a-server-site/72162681#72162681
 ***
 # Fruity Inventory
 
