@@ -4,7 +4,7 @@ const Contact = () => {
     return (
         <div>
             <div class="contact">
-            <div class="container">
+            <div id='contact' class="container">
                 <div class="row">
                 <div class="col-md-12">
                     <div class="titlepage text_align_center">

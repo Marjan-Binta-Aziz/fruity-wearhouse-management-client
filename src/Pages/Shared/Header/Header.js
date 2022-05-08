@@ -32,8 +32,11 @@ const Header = () => {
               <Nav.Link as={Link} to="/blog">
                   Blogs
                 </Nav.Link>
-                <Nav.Link as={Link} to="/about">
-                  About
+                <Nav.Link href='home#cat'>
+                  Category
+                </Nav.Link>
+                <Nav.Link href='home#contact'>
+                  Contact Us
                 </Nav.Link>
 
             </Nav>
@@ -41,8 +44,8 @@ const Header = () => {
               {
                 user && 
                 <>
-                <Nav.Link as={Link} to="/manage">Manage Items</Nav.Link>
                 <Nav.Link as={Link} to="/additems">Add Item</Nav.Link>
+                <Nav.Link as={Link} to="/manage">Manage Items</Nav.Link>
                 <Nav.Link as={Link} to="/myitems">My items</Nav.Link>
                 </>
 

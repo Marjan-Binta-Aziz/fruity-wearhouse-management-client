@@ -4,7 +4,7 @@ const SummerOffer = () => {
     return (
         <div>
         <section className="banner">
-    <h1 className='cat'>Our Categories</h1>
+    <h1 id='cat' className='cat'>Our Categories</h1>
     <div className="grid-banner">
         <div className="grid">
             <img src="https://i.ibb.co/1qDFg0H/summer.webp" alt=""/>
