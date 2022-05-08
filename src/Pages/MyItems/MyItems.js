@@ -21,8 +21,7 @@ const MyItems = () => {
             .then(response => {
                 setItems(response.data);
             })
-           /*  try{
-            
+            try{
                 const {data} = await axios.get(url ,{
                     headers: {
                         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -38,7 +37,7 @@ const MyItems = () => {
                 signOut(auth);
                 navigate("/login");
                 }
-            } */
+            }
         }
             getMyItems();
     },[user])

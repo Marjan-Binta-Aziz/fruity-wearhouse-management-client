@@ -1,4 +1,6 @@
 ##
+
+Live Link : https://warehouse-management-724dd.web.app
 ***
 # Fruity Inventory
 
@@ -48,7 +50,7 @@
 * Send Verification mail 
 * Email Validation 
 * Require Auth
- ## `By using firebase hooks `
+ ## `Firebase hooks `
 
 ##
 
