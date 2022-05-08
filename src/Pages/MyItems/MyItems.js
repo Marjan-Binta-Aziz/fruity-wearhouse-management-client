@@ -1,4 +1,3 @@
-import { Button } from 'react-bootstrap';
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -11,8 +10,8 @@ const MyItems = () => {
     const navigate = useNavigate();
     const [user] = useAuthState(auth);
     const [items, setItems] = useState([]);
-
     const email = user.email;
+
     useEffect(()=>{        
         const url = `http://localhost:5000/myitems?email=${email}`;
         const getMyItems = async () => { 
@@ -21,31 +20,33 @@ const MyItems = () => {
             .then(response => {
                 setItems(response.data);
             })
-            try{
-                const {data} = await axios.get(url ,{
-                    headers: {
-                        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-                    },
-                })
+
+            // try{
+            //     const {data} = await axios.get(url ,{
+            //         headers: {
+            //             authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+            //         },
+            //     })
                 
-                    .then(response => {
-                        setItems(data);
-                    })
-                } catch (error){
-                    console.log(error.message);
-                if (error.response.status === 401 || error.response.status === 403) {
-                signOut(auth);
-                navigate("/login");
-                }
-            }
+            //         .then(response => {
+            //             setItems(data);
+            //         })
+            //     } catch (error){
+            //         console.log(error.message);
+            //     if (error.response.status === 401 || error.response.status === 403) {
+            //     signOut(auth);
+            //     navigate("/login");
+            //     }
+            // }
         }
             getMyItems();
     },[user])
+
     const deleteFromMyItems = async (id) => {
 
         const deleteMyItem = window.confirm('Are you sure to delete this item?');
         if (deleteMyItem) {
-            const url = `http://localhost:5000/myitems/${id}`;
+            const url = `http://localhost:5000/inventory/${id}`;
 
             await axios.delete(url)
                 .then(response => {

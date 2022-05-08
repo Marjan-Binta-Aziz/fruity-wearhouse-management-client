@@ -1,0 +1,69 @@
+section {
+    padding: 2rem 9%;
+  }
+  .banner .grid-banner {
+    display: grid;
+    grid-template-columns: repeat(4,1fr); 
+    gap: 1.5rem;
+  }
+  
+  .banner .grid-banner .grid {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+  
+  .banner .grid-banner .grid:hover img {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  
+  .banner .grid-banner .grid img {
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  
+  .banner .grid-banner .grid .content {
+    position: absolute;
+    top: 5rem;
+    padding: 0 2rem;
+  }
+  
+  .banner .grid-banner .grid .content.center {
+    text-align: center;
+    width: 100%;
+  }
+  
+  .banner .grid-banner .grid .content.center span {
+    color: rgb(255, 248, 248);
+  }
+  
+  .banner .grid-banner .grid .content.center h3 {
+    color: #130f40;
+  }
+  
+  .banner .grid-banner .grid .content span {
+    font-size: 3.5rem;
+    color: #fff;
+  }
+  
+  .banner .grid-banner .grid .content h3 {
+    font-size: 3rem;
+    color: #fff;
+    padding-top: .5rem;
+  }
+  .banner .grid-banner .grid .content a{
+    width: 150px;
+    padding: 10px;
+    /* border: 2px solid rgb(182, 176, 176); */
+    border-radius: 90px;
+    margin-bottom: 10px;
+    background-color: rgba(240, 244, 248, 0.507);
+}
+.btn:hover{
+    border: 2px solid rgb(239, 192, 99);
+
+}
+  
